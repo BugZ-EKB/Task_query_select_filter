@@ -51,18 +51,11 @@ def field_filter(column: str, *values: Any) -> ModifierFunc:
     filter[column]=values
     return filter
 
-# friends = [
-#     {'name': 'Sam', 'gender': 'male', 'sport': 'Basketball'},
-#     {'name': 'Emily', 'gender': 'female', 'sport': 'Volleyball'},
-# ]
-#
-# result = query(
-#     friends,
-#     select('name', 'gender', 'sport'),
-#     field_filter('name', *('Emily', 'John')),
-#     field_filter('sport', *('Basketball', 'Volleyball')),
-# )
-# print(result)
+friends = [
+    {'name': 'Sam', 'gender': 'male', 'sport': 'Basketball'},
+    {'name': 'Emily', 'gender': 'female', 'sport': 'volleyball'},
+]
+
 # def test_query():
 #     friends = [
 #         {'name': 'Sam', 'gender': 'male', 'sport': 'Basketball'}
