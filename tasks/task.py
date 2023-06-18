@@ -44,3 +44,21 @@ friends = [
     {'name': 'Sam', 'gender': 'male', 'sport': 'Basketball'},
     {'name': 'Emily', 'gender': 'female', 'sport': 'volleyball'},
 ]
+
+def test_query():
+    friends = [
+        {'name': 'Sam', 'gender': 'male', 'sport': 'Basketball'},
+        {'name': 'Emily', 'gender': 'female', 'sport': 'volleyball'},
+    ]
+    value = query(
+        friends,
+        select(*('name', 'gender', 'sport')),
+        field_filter(*('sport', *('Basketball', 'volleyball'))),
+        field_filter(*('gender', *('male',))),
+    )
+    print(value)
+    assert [{'gender': 'male', 'name': 'Sam', 'sport': 'Basketball'}] == value
+
+
+if __name__ == "__main__":
+    test_query()
